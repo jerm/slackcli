@@ -1,4 +1,4 @@
-# slack-cli
+# slackcli
 Slack CLI Application.
 
 ### Install
