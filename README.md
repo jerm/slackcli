@@ -1,6 +1,11 @@
 # slack-cli
 Slack CLI Application.
 
+### Install
+```
+pip install slackcli`
+```
+
 ### Usage
 ```
 Run the command:
