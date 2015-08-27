@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 import argparse
 from os import environ as env
 from slackclient import SlackClient
@@ -25,7 +23,7 @@ def error(param):
     print ('See help: slack-cli -h')
     exit(1)
 
-if __name__ == '__main__':
+def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('-t', '--token', help='\
         Slack token. Use this or set environment variable SLACK_TOKEN.')
@@ -54,4 +52,7 @@ if __name__ == '__main__':
     if not SLACK_CHANNEL:
         error('CHANNEL')
     send_text(args.text.decode('string-escape'))
+
+if __name__ == '__main__':
+    main()
 
