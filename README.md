@@ -3,7 +3,7 @@ Slack CLI Application.
 
 ### Install
 ```
-pip install slackcli`
+pip install slackcli
 ```
 
 ### Usage
