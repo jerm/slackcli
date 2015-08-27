@@ -1,0 +1,5 @@
+slackcli.egg-info
+*.pyc
+build
+dist
+.DS_Stores
