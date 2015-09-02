@@ -2,20 +2,19 @@
 Slack CLI Application.
 
 ## Install
-```
+```Shell
 pip install slackcli
 ```
 
 ## Usage
-```
-Run the command:
+```Shell
+# Run the command:
 slackcli -t [TOKEN] -c [CHANNEL] "Hello World"`
 slackcli -t [TOKEN] -c [CHANNEL] -u [USERNAME] -i [ICON_URL] "Hello from Slack!"  # username & icon url are optionals`
  
-To make thing simpler, you can also use environment variables to save the token, channel, username, and icon url.
-For example:
- 
-# you can export these in shell or include these inside .bashrc
+# To make thing simpler, you can also use environment variables to save the token, channel, username, and icon url.
+# For example:
+# You can export these in shell or include these inside .bashrc
 export SLACK_TOKEN=[TOKEN]
 export SLACK_CHANNEL=[CHANNEL]
 export SLACK_USERNAME=[USERNAME]
@@ -25,3 +24,6 @@ slackcli "Hello World from Slack CLI!"
 slackcli "Hello again!"
 slackcli "42 is the answer to everything"
 ```
+
+## License
+MIT
