@@ -1,12 +1,12 @@
 # slackcli
 Slack CLI Application.
 
-### Install
+## Install
 ```
 pip install slackcli
 ```
 
-### Usage
+## Usage
 ```
 Run the command:
 slackcli -t [TOKEN] -c [CHANNEL] "Hello World"`
