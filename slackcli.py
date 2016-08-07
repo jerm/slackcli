@@ -2,21 +2,6 @@ import argparse
 from os import environ as env
 from slackclient import SlackClient
 
-SLACK_TOKEN = 'SLACK_TOKEN' in env and env['SLACK_TOKEN']
-SLACK_CHANNEL = 'SLACK_CHANNEL' in env and env['SLACK_CHANNEL']
-SLACK_USERNAME = 'SLACK_USERNAME' in env and env['SLACK_USERNAME']
-SLACK_ICON_URL = 'SLACK_ICON_URL' in env and env['SLACK_ICON_URL']
-
-def send_text(text):
-    slack_client = SlackClient(SLACK_TOKEN)
-    message = slack_client.api_call('chat.postMessage', **{
-        'text': text,
-        'channel': SLACK_CHANNEL,
-        'username': SLACK_USERNAME,
-        'icon_url': SLACK_ICON_URL
-    })
-    print(message)
-
 def error(param):
     print('You need to set parameter {}.'.format(param))
     print ('You can use the argument or set the environment variable.')
@@ -24,6 +9,20 @@ def error(param):
     exit(1)
 
 def main():
+    SLACK_TOKEN = 'SLACK_TOKEN' in env and env['SLACK_TOKEN']
+    SLACK_CHANNEL = 'SLACK_CHANNEL' in env and env['SLACK_CHANNEL']
+    SLACK_USERNAME = 'SLACK_USERNAME' in env and env['SLACK_USERNAME']
+    SLACK_ICON_URL = 'SLACK_ICON_URL' in env and env['SLACK_ICON_URL']
+
+    def send_text(text):
+        slack_client = SlackClient(SLACK_TOKEN)
+        message = slack_client.api_call('chat.postMessage', **{
+            'text': text,
+            'channel': SLACK_CHANNEL,
+            'username': SLACK_USERNAME,
+            'icon_url': SLACK_ICON_URL
+        })
+        print(message)
     parser = argparse.ArgumentParser()
     parser.add_argument('-t', '--token', help='\
         Slack token. Use this or set environment variable SLACK_TOKEN.')
@@ -55,4 +54,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
